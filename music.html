@@ -10,13 +10,45 @@
     <script src="https://cdn.tailwindcss.com"></script>
     
     <style>
-        /* 可以在这里添加一些自定义的CSS，如果需要的话 */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: linear-gradient(135deg, #F2F2F7 0%, #E5E5EA 100%);
+            color: #1D1D1F;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-700">
+
+    <!-- Header -->
+    <header class="glass-effect sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">AI</span>
+                    </div>
+                    <h1 class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                        音乐导航
+                    </h1>
+                </div>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="https://www.seodog.cn" class="text-blue-600 hover:underline text-sm font-semibold">首页</a>
+                    <a href="chuhai.html" class="text-blue-600 hover:underline text-sm font-semibold">出海站</a>
+                    <a href="game.html" class="text-blue-600 hover:underline text-sm font-semibold">游戏</a>
+                    <a href="hanghai.html" class="text-blue-600 hover:underline text-sm font-semibold">web航海</a>
+                    <a href="img.html" class="text-blue-600 hover:underline text-sm font-semibold">图片导航</a>
+                    <a href="links.html" class="text-blue-600 hover:underline text-sm font-semibold">友情链接</a>
+                    <a href="music.html" class="text-blue-600 hover:underline text-sm font-semibold">音乐导航</a>
+                    <a href="designer.html" class="text-blue-600 hover:underline text-sm font-semibold">设计师导航</a>
+                </div>
+            </div>
+        </div>
+    </header>
 
     <div class="container mx-auto px-4 py-8 md:py-12">
 
@@ -67,6 +99,10 @@
                         <h3 class="font-semibold text-gray-900">一听音乐网</h3>
                         <p class="text-sm text-gray-500 mt-1">www.1ting.com</p>
                     </a>
+                    <a href="https://tingwu.aliyun.com/" target="_blank" rel="noopener noreferrer" class="block bg-white p-4 rounded-lg shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                        <h3 class="font-semibold text-gray-900">通义听雨</h3>
+                        <p class="text-sm text-gray-500 mt-1">tingwu.aliyun.com</p>
+                    </a>
                 </nav>
             </section>
 
@@ -110,6 +146,18 @@
                     <a href="https://www.yue365.com" target="_blank" rel="noopener noreferrer" class="block bg-white p-4 rounded-lg shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                         <h3 class="font-semibold text-gray-900">365音乐网</h3>
                         <p class="text-sm text-gray-500 mt-1">www.yue365.com</p>
+                    </a>
+                    <a href="https://mvsep.com/zh/home" target="_blank" rel="noopener noreferrer" class="block bg-white p-4 rounded-lg shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                        <h3 class="font-semibold text-gray-900">音乐与音轨分离</h3>
+                        <p class="text-sm text-gray-500 mt-1">mvsep.com</p>
+                    </a>
+                    <a href="https://vocalremover.org/zh/cutter" target="_blank" rel="noopener noreferrer" class="block bg-white p-4 rounded-lg shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                        <h3 class="font-semibold text-gray-900">音频剪辑</h3>
+                        <p class="text-sm text-gray-500 mt-1">vocalremover.org</p>
+                    </a>
+                    <a href="https://www.freeconvert.com/zh/mp3-to-wav" target="_blank" rel="noopener noreferrer" class="block bg-white p-4 rounded-lg shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                        <h3 class="font-semibold text-gray-900">FreeConvert</h3>
+                        <p class="text-sm text-gray-500 mt-1">音频格式转换工具</p>
                     </a>
                 </nav>
             </section>
@@ -158,16 +206,6 @@
             </p>
         </footer>
 
-    </div>
-
-    <div class="hidden md:flex items-center space-x-4">
-        <a href="https://www.seodog.cn" class="text-blue-600 hover:underline text-sm font-semibold">首页</a>
-        <a href="chuhai.html" class="text-blue-600 hover:underline text-sm font-semibold">出海站</a>
-        <a href="game.html" class="text-blue-600 hover:underline text-sm font-semibold">游戏</a>
-        <a href="hanghai.html" class="text-blue-600 hover:underline text-sm font-semibold">web航海</a>
-        <a href="img.html" class="text-blue-600 hover:underline text-sm font-semibold">图片导航</a>
-        <a href="links.html" class="text-blue-600 hover:underline text-sm font-semibold">友情链接</a>
-        <a href="music.html" class="text-blue-600 hover:underline text-sm font-semibold">音乐导航</a>
     </div>
 
 </body>

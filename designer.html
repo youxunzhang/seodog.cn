@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>设计师导航 - 精选设计工具与灵感平台</title>
+    <meta name="description" content="设计师导航 - 收录最全面的设计师工具，包括AI绘画、品牌设计、3D建模、配色灵感等，助力设计师高效创作。">
+    <meta name="keywords" content="设计师导航,AI设计工具,品牌设计,3D建模,配色,灵感,设计资源">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --designer-blue: #2563eb;
+            --designer-purple: #a21caf;
+            --designer-green: #22c55e;
+            --designer-orange: #f59e42;
+            --designer-gray: #64748b;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #f3f4f6 0%, #e0e7ff 100%);
+            color: #1e293b;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .tool-card {
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1.5px solid rgba(0,0,0,0.07);
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+        }
+        .tool-card:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.10);
+            background: rgba(255, 255, 255, 0.98);
+        }
+        .category-header {
+            background: linear-gradient(90deg, var(--designer-blue), var(--designer-purple));
+            color: white;
+        }
+        .search-box {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(37, 99, 235, 0.2);
+            transition: all 0.3s ease;
+        }
+        .search-box:focus {
+            border-color: var(--designer-blue);
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+        }
+        @media (max-width: 768px) {
+            .tool-card { margin-bottom: 12px; }
+        }
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Header -->
+    <header class="glass-effect sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">DESIGN</span>
+                    </div>
+                    <h1 class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                        设计师导航
+                    </h1>
+                </div>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="index.html" class="text-blue-600 hover:underline text-sm font-semibold">AI工具导航首页</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Section -->
+    <section class="py-12 bg-gradient-to-br from-blue-50 to-purple-50">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                发现最好的设计师工具
+            </h2>
+            <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                精选24个高效设计师工具，助力灵感与创作效率提升
+            </p>
+            <div class="max-w-2xl mx-auto">
+                <input 
+                    type="text" 
+                    id="searchInput"
+                    placeholder="搜索设计师工具..." 
+                    class="search-box w-full px-6 py-4 rounded-2xl text-lg outline-none"
+                >
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- AI图像生成/绘画 -->
+        <section class="mb-12 fade-in">
+            <h2 class="category-header text-2xl font-bold p-4 rounded-t-2xl mb-0">
+                🎨 AI图像生成/绘画
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6 bg-white rounded-b-2xl shadow-lg">
+                <!-- Midjourney -->
+                <div class="tool-card p-4 rounded-xl">
+                    <h3 class="font-semibold text-lg mb-2">Midjourney</h3>
+                    <p class="text-gray-600 text-sm mb-2">AI图像生成平台，支持风格化创意视觉创作，适合平面设计、插画、广告等多领域。</p>
+                    <a href="https://www.midjourney.com/explore?tab=top" target="_blank" class="text-blue-600 hover:underline text-sm">官网链接</a>
+                </div>
+                <!-- Adobe Firefly -->
+                <div class="tool-card p-4 rounded-xl">
+                    <h3 class="font-semibold text-lg mb-2">Adobe Firefly</h3>
+                    <p class="text-gray-600 text-sm mb-2">Adobe推出的AI创意工具，支持文本生成图像、图像编辑、素材定制，与PS/AI无缝集成。</p>
+                    <a href="https://firefly.adobe.com/" target="_blank" class="text-blue-600 hover:underline text-sm">官网链接</a>
+                </div>
+                <!-- stablediffusion -->
+                <div class="tool-card p-4 rounded-xl">
+                    <h3 class="font-semibold text-lg mb-2">Stable Diffusion Web</h3>
+                    <p class="text-gray-600 text-sm mb-2">AI图像生成平台，支持多风格、细节可控，适合插画、摄影、数字艺术等视觉创作。</p>
+                    <a href="https://stablediffusionweb.com/zh-cn" target="_blank" class="text-blue-600 hover:underline text-sm">官网链接</a>
+                </div>
+                <!-- 即梦 -->
+                <div class="tool-card p-4 rounded-xl">
+                    <h3 class="font-semibold text-lg mb-2">即梦</h3>
+                    <p class="text-gray-600 text-sm mb-2">集AI绘画、视频生成、智能画布、数字人等多功能于一体的创作平台，激发无限灵感。</p>
+                    <a href="https://jimeng.jianying.com/ai-tool/home" target="_blank" class="text-blue-600 hover:underline text-sm">官网链接</a>
+                </div>
+                <!-- LiblibAI -->
+                <div class="tool-card p-4 rounded-xl">
+                    <h3 class="font-semibold text-lg mb-2">LiblibAI</h3>
+                    <p class="text-gray-600 text-sm mb-2">中国领先AI绘画平台，10万+原创模型，支持在线绘图与模型训练，适合多层次设计师。</p>
+                    <a href="https://www.liblib.art/" target="_blank" class="text-blue-600 hover:underline text-sm">官网链接</a>
+                </div>
+                <!-- 秒画 -->
+                <div class="tool-card p-4 rounded-xl">
+                    <h3 class="font-semibold text-lg mb-2">秒画</h3>
+                    <p class="text-gray-600 text-sm mb-2">商汤科技AI绘画平台，支持多风格图像生成与个性化模型训练，灵感广场助力创作。</p>
+                    <a href="https://miaohua.sensetime.com/" target="_blank" class="text-blue-600 hover:underline text-sm">官网链接</a>
+                </div>
+                <!-- Whee -->
+                <div class="tool-card p-4 rounded-xl">
+                    <h3 class="font-semibold text-lg mb-2">Whee</h3>
+                    <p class="text-gray-600 text-sm mb-2">美图AI工具平台，支持视觉设计、插画、动态图像等内容智能生成，操作简洁高效。</p>
+                    <a href="https://www.whee.com/" target="_blank" class="text-blue-600 hover:underline text-sm">官网链接</a>
+                </div>
+                <!-- 通义万象 -->
+                <div class="tool-card p-4 rounded-xl">
+                    <h3 class="font-semibold text-lg mb-2">通义万象</h3>
+                    <p class="text-gray-600 text-sm mb-2">阿里云AI视觉创作平台，支持文生图、图生图、风格迁移、视频生成，适合多场景设计。</p>
+                    <a href="https://tongyi.aliyun.com/wanxiang/" target="_blank" class="text-blue-600 hover:underline text-sm">官网链接</a>
+                </div>
+                <!-- 奇域 -->
+                <div class="tool-card p-4 rounded-xl">
+                    <h3 class="font-semibold text-lg mb-2">奇域</h3>
+                    <p class="text-gray-600 text-sm mb-2">新中式美学AI绘画平台，支持国画、水墨等200+风格，适合国潮插画、文创等场景。</p>
+                    <a href="https://www.whee.com/" target="_blank" class="text-blue-600 hover:underline text-sm">官网链接</a>
+                </div>
+                <!-- Ilus.ai -->
+                <div class="tool-card p-4 rounded-xl">
+                    <h3 class="font-semibold text-lg mb-2">Ilus.ai</h3>
+                    <p class="text-gray-600 text-sm mb-2">AI图像生成平台，支持插画、概念艺术、产品设计等多场景，风格细节可自定义。</p>
+                    <a href="https://ilus.ai/?utm_source=ai-bot.cn" target="_blank" class="text-blue-600 hover:underline text-sm">官网链接</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 品牌/Logo/电商设计 -->
+        <section class="mb-12 fade-in">
+            <h2 class="category-header text-2xl font-bold p-4 rounded-t-2xl mb-0" style="background:linear-gradient(90deg,#f59e42,#fbbf24);">
+                🏷️ 品牌/Logo/电商设计
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6 bg-white rounded-b-2xl shadow-lg">
+                <!-- Looka -->
+                <div class="tool-card p-4 rounded-xl">
+                    <h3 class="font-semibold text-lg mb-2">Looka</h3>
+                    <p class="text-gray-600 text-sm mb-2">AI品牌设计平台，快速生成Logo及品牌视觉，支持名片、网站等一站式品牌建设。</p>
+                    <a href="https://looka.com/" target="_blank" class="text-blue-600 hover:underline text-sm">官网链接</a>
+                </div>
+                <!-- LogoAI -->
+                <div class="tool-card p-4 rounded-xl">
+                    <h3 class="font-semibold text-lg mb-2">LogoAI</h3>
+                    <p class="text-gray-600 text-sm mb-2">AI Logo设计平台，自动生成多种风格Logo，支持品牌资产工具，适合快速品牌启动。</p>
+                    <a href="https://www.logoai.com/" target="_blank" class="text-blue-600 hover:underline text-sm">官网链接</a>
+                </div>
+                <!-- Pic Copilot -->
+                <div class="tool-card p-4 rounded-xl">
+                    <h3 class="font-semibold text-lg mb-2">Pic Copilot</h3>
+                    <p class="text-gray-600 text-sm mb-2">阿里国际站AI电商设计工具，2000+模板，一键抠图，适合跨境商品主图与Banner设计。</p>
+                    <a href="https://www.piccopilot.com/create" target="_blank" class="text-blue-600 hover:underline text-sm">官网链接</a>
+                </div>
+                <!-- Redoon -->
+                <div class="tool-card p-4 rounded-xl">
+                    <h3 class="font-semibold text-lg mb-2">Redoon</h3>
+                    <p class="text-gray-600 text-sm mb-2">AI电商设计工具，智能抠图、场景模板、4K营销图生成，助力高效电商视觉创作。</p>
+                    <a href="https://www.redoon.cn/index?ref=ai-bot.cn" target="_blank" class="text-blue-600 hover:underline text-sm">官网链接</a>
+                </div>
+                <!-- 美简 -->
+                <div class="tool-card p-4 rounded-xl">
+                    <h3 class="font-semibold text-lg mb-2">美简</h3>
+                    <p class="text-gray-600 text-sm mb-2">电商设计平台，丰富模板与AI智能建议，支持多平台适配与团队协作，提升电商设计效率。</p>
+                    <a href="https://www.meijian.com/e-commerce" target="_blank" class="text-blue-600 hover:underline text-sm">官网链接</a>
+                </div>
+                <!-- Designs.ai -->
+                <div class="tool-card p-4 rounded-xl">
+                    <h3 class="font-semibold text-lg mb-2">Designs.ai</h3>
+                    <p class="text-gray-600 text-sm mb-2">集成AI的全能设计平台，支持Logo、视频、海报、社交内容等多种设计自动生成。</p>
+                    <a href="https://designs.ai/" target="_blank" class="text-blue-600 hover:underline text-sm">官网链接</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3D/动态设计 -->
+        <section class="mb-12 fade-in">
+            <h2 class="category-header text-2xl font-bold p-4 rounded-t-2xl mb-0" style="background:linear-gradient(90deg,#22c55e,#2563eb);">
+                🧊 3D/动态设计
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6 bg-white rounded-b-2xl shadow-lg">
+                <!-- Spline AI -->
+                <div class="tool-card p-4 rounded-xl">
+                    <h3 class="font-semibold text-lg mb-2">Spline AI</h3>
+                    <p class="text-gray-600 text-sm mb-2">创新3D设计工具，AI生成3D模型，支持实时编辑与多场景导出，降低3D设计门槛。</p>
+                    <a href="https://spline.design/ai-generate" target="_blank" class="text-blue-600 hover:underline text-sm">官网链接</a>
+                </div>
+                <!-- VoxCraft -->
+                <div class="tool-card p-4 rounded-xl">
+                    <h3 class="font-semibold text-lg mb-2">VoxCraft</h3>
+                    <p class="text-gray-600 text-sm mb-2">AI驱动3D生成平台，支持图生3D、文生3D、智能贴图、视频转4D，适合游戏、建筑等领域。</p>
+                    <a href="https://voxcraft.ai/?utm_source=ai-bot.cn" target="_blank" class="text-blue-600 hover:underline text-sm">官网链接</a>
+                </div>
+                <!-- 可灵 -->
+                <div class="tool-card p-4 rounded-xl">
+                    <h3 class="font-semibold text-lg mb-2">可灵</h3>
+                    <p class="text-gray-600 text-sm mb-2">快手AI视频生成平台，支持文生视频、图生视频、动态编辑，适合广告、数字藏品等场景。</p>
+                    <a href="https://app.klingai.com/cn/" target="_blank" class="text-blue-600 hover:underline text-sm">官网链接</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 设计资源/灵感/配色/协作 -->
+        <section class="mb-12 fade-in">
+            <h2 class="category-header text-2xl font-bold p-4 rounded-t-2xl mb-0" style="background:linear-gradient(90deg,#a21caf,#64748b);">
+                💡 设计资源/灵感/配色/协作
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6 bg-white rounded-b-2xl shadow-lg">
+                <!-- Khroma -->
+                <div class="tool-card p-4 rounded-xl">
+                    <h3 class="font-semibold text-lg mb-2">Khroma</h3>
+                    <p class="text-gray-600 text-sm mb-2">AI色彩工具，个性化配色方案生成与管理，适合网页、品牌、UI等多场景。</p>
+                    <a href="https://www.khroma.co/" target="_blank" class="text-blue-600 hover:underline text-sm">官网链接</a>
+                </div>
+                <!-- GeniusUI -->
+                <div class="tool-card p-4 rounded-xl">
+                    <h3 class="font-semibold text-lg mb-2">GeniusUI</h3>
+                    <p class="text-gray-600 text-sm mb-2">UI/UX灵感与资源平台，提供高质量模板、动效、设计系统，助力高效界面设计。</p>
+                    <a href="https://geniusui.carrd.co/" target="_blank" class="text-blue-600 hover:underline text-sm">官网链接</a>
+                </div>
+                <!-- Microsoft Designer -->
+                <div class="tool-card p-4 rounded-xl">
+                    <h3 class="font-semibold text-lg mb-2">Microsoft Designer</h3>
+                    <p class="text-gray-600 text-sm mb-2">微软官方设计资源平台，提供设计系统、组件库、协作工具，提升设计效率与一致性。</p>
+                    <a href="https://designer.microsoft.com/" target="_blank" class="text-blue-600 hover:underline text-sm">官网链接</a>
+                </div>
+                <!-- Uizard -->
+                <div class="tool-card p-4 rounded-xl">
+                    <h3 class="font-semibold text-lg mb-2">Uizard</h3>
+                    <p class="text-gray-600 text-sm mb-2">低代码设计平台，拖放式UI/UX原型制作，AI辅助布局，适合快速产品验证与协作。</p>
+                    <a href="https://uizard.io/" target="_blank" class="text-blue-600 hover:underline text-sm">官网链接</a>
+                </div>
+                <!-- 堆友 -->
+                <div class="tool-card p-4 rounded-xl">
+                    <h3 class="font-semibold text-lg mb-2">堆友</h3>
+                    <p class="text-gray-600 text-sm mb-2">阿里巴巴设计师服务平台，集成AI绘画、造字、商品图生成与3D素材，支持在线渲染。</p>
+                    <a href="https://d.design/" target="_blank" class="text-blue-600 hover:underline text-sm">官网链接</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="glass-effect py-8 mt-16">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex items-center justify-center space-x-3 mb-4">
+                <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                    <span class="text-white font-bold">DESIGN</span>
+                </div>
+                <span class="text-xl font-semibold">设计师导航</span>
+            </div>
+            <p class="text-gray-600 mb-4">发现最好的设计师工具，提升创作效率与灵感</p>
+            <p class="text-sm text-gray-500">© 2024 设计师导航. 精选优质设计工具，持续更新</p>
+        </div>
+    </footer>
+
+    <script>
+        // 搜索功能
+        const searchInput = document.getElementById('searchInput');
+        const toolCards = document.querySelectorAll('.tool-card');
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            toolCards.forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const description = card.querySelector('p').textContent.toLowerCase();
+                if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                    card.style.display = 'block';
+                    card.parentElement.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            // 隐藏空的分类
+            document.querySelectorAll('section').forEach(section => {
+                const visibleCards = section.querySelectorAll('.tool-card[style*="block"], .tool-card:not([style*="none"])');
+                if (visibleCards.length === 0 && searchTerm !== '') {
+                    section.style.display = 'none';
+                } else {
+                    section.style.display = 'block';
+                }
+            });
+        });
+        // 平滑滚动动画
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        document.querySelectorAll('.fade-in').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html> 
