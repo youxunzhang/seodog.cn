@@ -8,57 +8,179 @@
     <meta name="keywords" content="AI工具导航, AI导航, 人工智能工具, AI工具, 大模型, AIGC, Perplexity, Claude, Midjourney, Runway, HeyGen, Pika">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Apple-like color scheme */
         :root {
-            --apple-bg: #f5f5f7;
-            --apple-text: #1d1d1f;
-            --apple-blue: #007aff;
-            --apple-gray: #8e8e93;
-            --apple-light-gray: #e5e5ea;
-            --apple-card-bg: #ffffff;
+            --primary-blue: #3B82F6;
+            --primary-indigo: #6366F1;
+            --primary-purple: #8B5CF6;
+            --primary-pink: #EC4899;
+            --primary-rose: #F43F5E;
+            --primary-orange: #F97316;
+            --primary-amber: #F59E0B;
+            --primary-yellow: #EAB308;
+            --primary-lime: #84CC16;
+            --primary-green: #22C55E;
+            --primary-emerald: #10B981;
+            --primary-teal: #14B8A6;
+            --primary-cyan: #06B6D4;
+            --primary-sky: #0EA5E9;
+            --gray-50: #F9FAFB;
+            --gray-100: #F3F4F6;
+            --gray-200: #E5E7EB;
+            --gray-300: #D1D5DB;
+            --gray-400: #9CA3AF;
+            --gray-500: #6B7280;
+            --gray-600: #4B5563;
+            --gray-700: #374151;
+            --gray-800: #1F2937;
+            --gray-900: #111827;
         }
+        
         body {
-            background-color: var(--apple-bg);
-            color: var(--apple-text);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--gray-900);
+            line-height: 1.6;
         }
-        h1, h2 {
-            color: var(--apple-text);
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         }
+        
         .apple-link {
-            background-color: var(--apple-card-bg);
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 1rem;
+            position: relative;
+            overflow: hidden;
         }
+        
+        .apple-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--primary-purple));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
         .apple-link:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            background: rgba(255, 255, 255, 0.98);
         }
+        
+        .apple-link:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple), var(--primary-pink));
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 3s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .floating-animation {
+            animation: floating 6s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .section-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 1.5rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        @keyframes fadeIn {
+            from { 
+                opacity: 0; 
+                transform: translateY(30px) scale(0.95); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0) scale(1); 
+            }
+        }
+        
+        .stagger-animation {
+            animation: staggerFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+        
+        @keyframes staggerFadeIn {
+            from { 
+                opacity: 0; 
+                transform: translateY(20px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+        
         .apple-link h3 {
-             color: var(--apple-text);
+            color: var(--gray-900);
         }
+        
         .apple-link p {
-            color: var(--apple-gray);
+            color: var(--gray-600);
         }
+        
         .apple-link-tag {
-            background-color: var(--apple-light-gray);
-            color: var(--apple-gray);
+            background-color: var(--gray-200);
+            color: var(--gray-600);
         }
     </style>
 </head>
 <body class="antialiased">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-
-        <header class="text-center mb-12">
-            <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-2">
+    <!-- Hero Section -->
+    <section class="hero-section py-20 mb-16">
+        <div class="container mx-auto px-4 text-center">
+            <div class="floating-animation mb-8">
+                <div class="w-24 h-24 bg-gradient-to-r from-blue-500 to-purple-600 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-2xl">
+                    <span class="text-white font-bold text-3xl">🤖</span>
+                </div>
+            </div>
+            <h1 class="gradient-text text-5xl md:text-7xl font-bold mb-6 leading-tight">
                 AI 工具导航
             </h1>
-            <p class="text-lg text-gray-600">精选AI工具，助您开启智能时代</p>
-        </header>
+            <p class="text-xl md:text-2xl text-gray-700 mb-8 max-w-3xl mx-auto font-light">
+                精选AI工具，助您开启智能时代
+            </p>
+        </div>
+    </section>
+
+    <div class="container mx-auto px-4 pb-16">
 
         <main>
-            <section class="mb-12">
-                <h2 class="text-2xl font-bold border-l-4 border-blue-500 pl-4 mb-6">大模型</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <section class="mb-16 fade-in">
+                <div class="section-container overflow-hidden">
+                    <h2 class="text-2xl font-bold gradient-text p-6 mb-0">大模型</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-8">
                     <a href="https://matrix.tencent.com/ai-detect/" target="_blank" rel="noopener noreferrer" class="apple-link block p-6 rounded-lg shadow-md">
                         <h3 class="font-semibold text-lg mb-2">朱雀大模型检测</h3>
                         <p class="text-sm">腾讯出品，精准识别文本是否由AI生成。</p>
@@ -78,9 +200,10 @@
                 </div>
             </section>
 
-            <section class="mb-12">
-                <h2 class="text-2xl font-bold border-l-4 border-blue-500 pl-4 mb-6">媒体处理</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <section class="mb-16 fade-in">
+                <div class="section-container overflow-hidden">
+                    <h2 class="text-2xl font-bold gradient-text p-6 mb-0">媒体处理</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-8">
                     <a href="https://pixabay.com/" target="_blank" rel="noopener noreferrer" class="apple-link block p-6 rounded-lg shadow-md">
                         <h3 class="font-semibold text-lg mb-2">Pixabay</h3>
                         <p class="text-sm">海量无版权图片和视频素材库。</p>
@@ -132,9 +255,10 @@
                 </div>
             </section>
             
-            <section class="mb-12">
-                <h2 class="text-2xl font-bold border-l-4 border-blue-500 pl-4 mb-6">开发与创作</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <section class="mb-16 fade-in">
+                <div class="section-container overflow-hidden">
+                    <h2 class="text-2xl font-bold gradient-text p-6 mb-0">开发与创作</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-8">
                     <a href="https://www.cursor.com/cn" target="_blank" rel="noopener noreferrer" class="apple-link block p-6 rounded-lg shadow-md">
                         <h3 class="font-semibold text-lg mb-2">Cursor</h3>
                         <p class="text-sm">专为AI协同编程设计的代码编辑器。</p>
@@ -166,9 +290,10 @@
                 </div>
             </section>
 
-            <section class="mb-12">
-                <h2 class="text-2xl font-bold border-l-4 border-blue-500 pl-4 mb-6">行业与资源</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <section class="mb-16 fade-in">
+                <div class="section-container overflow-hidden">
+                    <h2 class="text-2xl font-bold gradient-text p-6 mb-0">行业与资源</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-8">
                     <a href="https://felo.ai/search" target="_blank" rel="noopener noreferrer" class="apple-link block p-6 rounded-lg shadow-md">
                         <h3 class="font-semibold text-lg mb-2">Felo AI Search</h3>
                         <p class="text-sm">聚合全球信息源，发现热点与趋势。</p>
@@ -196,8 +321,9 @@
                 </div>
             </section>
 
-            <section>
-                <h2 class="text-2xl font-bold border-l-4 border-blue-500 pl-4 mb-6">其他常用</h2>
+            <section class="fade-in">
+                <div class="section-container overflow-hidden">
+                    <h2 class="text-2xl font-bold gradient-text p-6 mb-0">其他常用</h2>
                  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                     <a href="https://md2card.com/" target="_blank" rel="noopener noreferrer" class="apple-link block p-6 rounded-lg shadow-md">
                         <h3 class="font-semibold text-lg mb-2">小红书卡片</h3>

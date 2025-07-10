@@ -9,58 +9,160 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         :root {
-            --designer-blue: #2563eb;
-            --designer-purple: #a21caf;
-            --designer-green: #22c55e;
-            --designer-orange: #f59e42;
-            --designer-gray: #64748b;
+            --primary-blue: #3B82F6;
+            --primary-indigo: #6366F1;
+            --primary-purple: #8B5CF6;
+            --primary-pink: #EC4899;
+            --primary-rose: #F43F5E;
+            --primary-orange: #F97316;
+            --primary-amber: #F59E0B;
+            --primary-yellow: #EAB308;
+            --primary-lime: #84CC16;
+            --primary-green: #22C55E;
+            --primary-emerald: #10B981;
+            --primary-teal: #14B8A6;
+            --primary-cyan: #06B6D4;
+            --primary-sky: #0EA5E9;
+            --gray-50: #F9FAFB;
+            --gray-100: #F3F4F6;
+            --gray-200: #E5E7EB;
+            --gray-300: #D1D5DB;
+            --gray-400: #9CA3AF;
+            --gray-500: #6B7280;
+            --gray-600: #4B5563;
+            --gray-700: #374151;
+            --gray-800: #1F2937;
+            --gray-900: #111827;
         }
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-            background: linear-gradient(135deg, #f3f4f6 0%, #e0e7ff 100%);
-            color: #1e293b;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--gray-900);
+            line-height: 1.6;
         }
+        
         .glass-effect {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        .tool-card {
-            transition: all 0.3s ease;
             background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border: 1.5px solid rgba(0,0,0,0.07);
-            border-radius: 0.75rem;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         }
+        
+        .tool-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tool-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--primary-purple));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
         .tool-card:hover {
-            transform: translateY(-4px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.10);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
             background: rgba(255, 255, 255, 0.98);
         }
+        
+        .tool-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple), var(--primary-pink));
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 3s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .floating-animation {
+            animation: floating 6s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .section-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 1.5rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        @keyframes fadeIn {
+            from { 
+                opacity: 0; 
+                transform: translateY(30px) scale(0.95); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0) scale(1); 
+            }
+        }
+        
+        .stagger-animation {
+            animation: staggerFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+        
+        @keyframes staggerFadeIn {
+            from { 
+                opacity: 0; 
+                transform: translateY(20px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+        
         .category-header {
-            background: linear-gradient(90deg, var(--designer-blue), var(--designer-purple));
+            background: linear-gradient(90deg, var(--primary-blue), var(--primary-purple));
             color: white;
+            border-radius: 1rem 1rem 0 0;
         }
+        
         .search-box {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(37, 99, 235, 0.2);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(59, 130, 246, 0.2);
             transition: all 0.3s ease;
+            border-radius: 1rem;
         }
+        
         .search-box:focus {
-            border-color: var(--designer-blue);
-            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
         }
+        
         @media (max-width: 768px) {
             .tool-card { margin-bottom: 12px; }
-        }
-        .fade-in {
-            animation: fadeIn 0.6s ease-in;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
@@ -84,13 +186,18 @@
         </div>
     </header>
 
-    <!-- Search Section -->
-    <section class="py-12 bg-gradient-to-br from-blue-50 to-purple-50">
+    <!-- Hero Section -->
+    <section class="hero-section py-20 mb-16">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                发现最好的设计师工具
-            </h2>
-            <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            <div class="floating-animation mb-8">
+                <div class="w-24 h-24 bg-gradient-to-r from-purple-500 to-pink-600 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-2xl">
+                    <span class="text-white font-bold text-3xl">🎨</span>
+                </div>
+            </div>
+            <h1 class="gradient-text text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                设计师导航
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-700 mb-8 max-w-3xl mx-auto font-light">
                 精选24个高效设计师工具，助力灵感与创作效率提升
             </p>
             <div class="max-w-2xl mx-auto">
@@ -98,20 +205,21 @@
                     type="text" 
                     id="searchInput"
                     placeholder="搜索设计师工具..." 
-                    class="search-box w-full px-6 py-4 rounded-2xl text-lg outline-none"
+                    class="search-box w-full px-6 py-4 text-lg outline-none"
                 >
             </div>
         </div>
     </section>
 
     <!-- Main Content -->
-    <main class="container mx-auto px-4 py-8">
+    <main class="container mx-auto px-4 pb-16">
         <!-- AI图像生成/绘画 -->
-        <section class="mb-12 fade-in">
-            <h2 class="category-header text-2xl font-bold p-4 rounded-t-2xl mb-0">
-                🎨 AI图像生成/绘画
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6 bg-white rounded-b-2xl shadow-lg">
+        <section class="mb-16 fade-in">
+            <div class="section-container overflow-hidden">
+                <h2 class="category-header text-2xl font-bold p-6 mb-0">
+                    🎨 AI图像生成/绘画
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-8">
                 <!-- Midjourney -->
                 <div class="tool-card p-4 rounded-xl">
                     <h3 class="font-semibold text-lg mb-2">Midjourney</h3>
@@ -176,11 +284,12 @@
         </section>
 
         <!-- 品牌/Logo/电商设计 -->
-        <section class="mb-12 fade-in">
-            <h2 class="category-header text-2xl font-bold p-4 rounded-t-2xl mb-0" style="background:linear-gradient(90deg,#f59e42,#fbbf24);">
-                🏷️ 品牌/Logo/电商设计
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6 bg-white rounded-b-2xl shadow-lg">
+        <section class="mb-16 fade-in">
+            <div class="section-container overflow-hidden">
+                <h2 class="category-header text-2xl font-bold p-6 mb-0" style="background:linear-gradient(90deg,var(--primary-orange),var(--primary-amber));">
+                    🏷️ 品牌/Logo/电商设计
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-8">
                 <!-- Looka -->
                 <div class="tool-card p-4 rounded-xl">
                     <h3 class="font-semibold text-lg mb-2">Looka</h3>
