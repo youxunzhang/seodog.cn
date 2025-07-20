@@ -147,6 +147,43 @@
             color: white;
             border-radius: 1rem 1rem 0 0;
         }
+        
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 40;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-nav.active {
+            transform: translateX(0);
+        }
+        
+        .mobile-nav-content {
+            padding: 5rem 2rem 2rem;
+            height: 100%;
+            overflow-y: auto;
+        }
+        
+        .mobile-nav a {
+            display: block;
+            padding: 1rem 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #374151;
+            border-bottom: 1px solid #E5E7EB;
+            transition: color 0.3s ease;
+        }
+        
+        .mobile-nav a:hover {
+            color: #3B82F6;
+        }
     </style>
 </head>
 <body class="min-h-screen">
@@ -162,19 +199,58 @@
                         网站地图
                     </h1>
                 </div>
-                <div class="hidden md:flex items-center space-x-4">
+                <div class="hidden md:flex items-center space-x-4 desktop-menu">
                     <a href="https://www.seodog.cn" class="text-blue-600 hover:underline text-sm font-semibold">首页</a>
-                    <a href="chuhai.html" class="text-blue-600 hover:underline text-sm font-semibold">出海</a>
+                    <a href="chuhai.html" class="text-blue-600 hover:underline text-sm font-semibold">AI出海</a>
                     <a href="game.html" class="text-blue-600 hover:underline text-sm font-semibold">游戏</a>
-                    <a href="hanghai.html" class="text-blue-600 hover:underline text-sm font-semibold">web航海</a>
-                    <a href="img.html" class="text-blue-600 hover:underline text-sm font-semibold">图片导航</a>
-                    <a href="links.html" class="text-blue-600 hover:underline text-sm font-semibold">友情链接</a>
-                    <a href="music.html" class="text-blue-600 hover:underline text-sm font-semibold">音乐导航</a>
-                    <a href="designer.html" class="text-blue-600 hover:underline text-sm font-semibold">设计师导航</a>
+                    <a href="hanghai.html" class="text-blue-600 hover:underline text-sm font-semibold">AI web航海</a>
+                    <a href="words.html" class="text-blue-600 hover:underline text-sm font-semibold">AI文字</a>
+                    <a href="img.html" class="text-blue-600 hover:underline text-sm font-semibold">AI图片</a>
+                    <a href="music.html" class="text-blue-600 hover:underline text-sm font-semibold">AI音乐</a>
+                    <a href="designer.html" class="text-blue-600 hover:underline text-sm font-semibold">AI设计师</a>
+                    <a href="ainum.html" class="text-blue-600 hover:underline text-sm font-semibold">AI数字人</a>
+                    <a href="aiprompt.html" class="text-blue-600 hover:underline text-sm font-semibold">AI提示词</a>
+                    <a href="ailearn.html" class="text-blue-600 hover:underline text-sm font-semibold">AI学习</a>
+                    <a href="aioffice.html" class="text-blue-600 hover:underline text-sm font-semibold">AI办公</a>
+                    <a href="aiagent.html" class="text-blue-600 hover:underline text-sm font-semibold">AI智能体</a>
+                    <a href="aicontent.html" class="text-blue-600 hover:underline text-sm font-semibold">AI内容</a>
+                    <a href="aitimer.html" class="text-blue-600 hover:underline text-sm font-semibold">AI计时器</a>
+                    <a href="aicommunity.html" class="text-blue-600 hover:underline text-sm font-semibold">AI社群</a>
+                    <a href="social.html" class="text-blue-600 hover:underline text-sm font-semibold">社交媒体</a>
+                    <a href="sitemap.html" class="text-blue-600 hover:underline text-sm font-semibold">网站地图</a>
                 </div>
+                <button class="mobile-menu-button md:hidden" id="mobileMenuButton">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
     </header>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-content">
+            <a href="https://www.seodog.cn" onclick="closeMobileMenu()">首页</a>
+            <a href="chuhai.html" onclick="closeMobileMenu()">AI出海</a>
+            <a href="game.html" onclick="closeMobileMenu()">游戏</a>
+            <a href="hanghai.html" onclick="closeMobileMenu()">AI web航海</a>
+            <a href="words.html" onclick="closeMobileMenu()">AI文字</a>
+            <a href="img.html" onclick="closeMobileMenu()">AI图片</a>
+            <a href="music.html" onclick="closeMobileMenu()">AI音乐</a>
+            <a href="designer.html" onclick="closeMobileMenu()">AI设计师</a>
+            <a href="ainum.html" onclick="closeMobileMenu()">AI数字人</a>
+            <a href="aiprompt.html" onclick="closeMobileMenu()">AI提示词</a>
+            <a href="ailearn.html" onclick="closeMobileMenu()">AI学习</a>
+            <a href="aioffice.html" onclick="closeMobileMenu()">AI办公</a>
+            <a href="aiagent.html" onclick="closeMobileMenu()">AI智能体</a>
+            <a href="aicontent.html" onclick="closeMobileMenu()">AI内容</a>
+            <a href="aitimer.html" onclick="closeMobileMenu()">AI计时器</a>
+            <a href="aicommunity.html" onclick="closeMobileMenu()">AI社群</a>
+            <a href="social.html" onclick="closeMobileMenu()">社交媒体</a>
+            <a href="sitemap.html" onclick="closeMobileMenu()">网站地图</a>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
     <section class="hero-section py-20 mb-16">
@@ -206,6 +282,11 @@
                     <h3 class="font-semibold text-lg mb-2">AI工具导航首页</h3>
                     <p class="text-gray-600 text-sm">seodog.cn</p>
                     <p class="text-gray-500 text-xs mt-2">AI工具导航主站，包含大模型、文字处理、图片处理等工具</p>
+                </a>
+                <a href="index-bilingual.html" class="sitemap-card p-6 rounded-xl hover:shadow-lg transition-all">
+                    <h3 class="font-semibold text-lg mb-2">双语首页</h3>
+                    <p class="text-gray-600 text-sm">index-bilingual.html</p>
+                    <p class="text-gray-500 text-xs mt-2">支持中英文切换的AI工具导航首页</p>
                 </a>
                 <a href="sitemap.html" class="sitemap-card p-6 rounded-xl hover:shadow-lg transition-all">
                     <h3 class="font-semibold text-lg mb-2">网站地图</h3>
@@ -281,6 +362,11 @@
                     <h3 class="font-semibold text-lg mb-2">词汇查询</h3>
                     <p class="text-gray-600 text-sm">words.html</p>
                     <p class="text-gray-500 text-xs mt-2">Cyberpunk词汇查询与快捷工具</p>
+                </a>
+                <a href="prayer.html" class="sitemap-card p-6 rounded-xl hover:shadow-lg transition-all">
+                    <h3 class="font-semibold text-lg mb-2">祈祷之树</h3>
+                    <p class="text-gray-600 text-sm">prayer.html</p>
+                    <p class="text-gray-500 text-xs mt-2">心灵祈祷平台，感受温暖的祝福</p>
                 </a>
             </div>
         </section>
@@ -359,5 +445,65 @@
             <p class="text-sm text-gray-500">© 2024 AI工具导航. 联系我们 wx zhangyouxun2013</p>
         </div>
     </footer>
+
+    <script>
+        // 移动端菜单功能
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileNav = document.getElementById('mobileNav');
+        const body = document.body;
+
+        function toggleMobileMenu() {
+            mobileMenuButton.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+            body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+        }
+
+        function closeMobileMenu() {
+            mobileMenuButton.classList.remove('active');
+            mobileNav.classList.remove('active');
+            body.style.overflow = '';
+        }
+
+        mobileMenuButton.addEventListener('click', toggleMobileMenu);
+
+        // 点击菜单外部关闭菜单
+        mobileNav.addEventListener('click', function(e) {
+            if (e.target === mobileNav) {
+                closeMobileMenu();
+            }
+        });
+
+        // 监听窗口大小变化，在大屏幕时关闭移动菜单
+        window.addEventListener('resize', function() {
+            if (window.innerWidth >= 768) {
+                closeMobileMenu();
+            }
+        });
+
+        // 触摸手势支持
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        mobileNav.addEventListener('touchstart', function(e) {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        mobileNav.addEventListener('touchend', function(e) {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+            
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    // 向左滑动，关闭菜单
+                    closeMobileMenu();
+                }
+            }
+        }
+    </script>
 </body>
 </html> 
