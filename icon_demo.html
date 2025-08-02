@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图标演示</title>
+    <style>
+        .icon-demo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        .icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>正确的图标实现方法</h1>
+    
+    <div class="icon-demo">
+        <img src="https://qianwen.aliyun.com/favicon.ico" alt="通义千问" class="icon" 
+             onerror="this.onerror=null;this.src='https://qianwen.aliyun.com/logo.png';this.onerror=function(){this.onerror=null;this.src='https://qianwen.aliyun.com/logo.jpg';this.onerror=function(){this.onerror=null;this.src='https://qianwen.aliyun.com/favicon.png';this.onerror=function(){this.style.display='none';}};}}">
+        <span>通义千问 - 正确的实现</span>
+    </div>
+    
+    <div class="icon-demo">
+        <img src="https://www.midjourney.com/favicon.ico" alt="Midjourney" class="icon" 
+             onerror="this.onerror=null;this.src='https://www.midjourney.com/logo.png';this.onerror=function(){this.onerror=null;this.src='https://www.midjourney.com/logo.jpg';this.onerror=function(){this.onerror=null;this.src='https://www.midjourney.com/favicon.png';this.onerror=function(){this.style.display='none';}};}}">
+        <span>Midjourney - 正确的实现</span>
+    </div>
+    
+    <div class="icon-demo">
+        <img src="https://chatglm.cn/favicon.ico" alt="智谱AI" class="icon" 
+             onerror="this.onerror=null;this.src='https://chatglm.cn/logo.png';this.onerror=function(){this.onerror=null;this.src='https://chatglm.cn/logo.jpg';this.onerror=function(){this.onerror=null;this.src='https://chatglm.cn/favicon.png';this.onerror=function(){this.style.display='none';}};}}">
+        <span>智谱AI - 正确的实现</span>
+    </div>
+    
+    <h2>说明</h2>
+    <p>这个演示展示了正确的图标实现方法：</p>
+    <ul>
+        <li>使用目标网站的直接favicon路径</li>
+        <li>实现完整的fallback链：favicon.ico → logo.png → logo.jpg → favicon.png</li>
+        <li>如果所有路径都失败，则隐藏图标</li>
+    </ul>
+</body>
+</html> 
